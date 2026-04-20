@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediumPremium — Unlock Any Medium Article</title>
+  <meta name="description" content="Bypass Medium paywall. Read any premium article for free. Futuristic. Fast. Free.">
+  <meta name="author" content="Elliot Jr aka bratyabasu07">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔓</text></svg>">
+</head>
+<body>
+  <!-- GIF Background -->
+  <div class="bg-gif"></div>
+  <div class="bg-gif-overlay"></div>
+
+  <!-- Effects -->
+  <canvas id="matrix-rain"></canvas>
+  <div class="scanlines"></div>
+  <div class="grid-bg"></div>
+  <div class="vignette"></div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div style="font-size: 32px;">🔓</div>
+    <div class="loading-text">BYPASSING PAYWALL...</div>
+    <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">🔓</div>
+        <div class="logo-text">Medium<span>Premium</span></div>
+      </a>
+      <div class="nav-status">
+        <div class="status-dot"></div>
+        <span>SYSTEM ONLINE</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Creator Banner -->
+  <div class="creator-banner">
+    <span class="creator-label">⚡ CRAFTED BY</span>
+    <span class="creator-name" data-text="ELLIOT JR aka bratyabasu07">ELLIOT JR aka bratyabasu07</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="container">
+    <section class="hero">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        v1.0.0 — PAYWALL BYPASS ACTIVE
+      </div>
+
+      <h1>
+        <span class="line1 glitch-text">Unlock Any</span><br>
+        <span class="line2">Medium Article<span class="cursor"></span></span>
+      </h1>
+
+      <p class="hero-sub">
+        Paste ****** restricted article URL below. We'll strip the paywall and serve you the full content — fast, clean, and free.
+      </p>
+
+      <!-- Input -->
+      <div class="input-section">
+        <form id="url-form" autocomplete="off">
+          <div class="input-wrapper">
+            <div class="input-glow"></div>
+            <div class="input-box">
+              <span class="input-prefix">$&gt;</span>
+              <input
+                type="url"
+                id="url-input"
+                class="url-input"
+                placeholder="https://medium.com/@user/article-slug..."
+                spellcheck="false"
+              >
+              <button type="submit" id="submit-btn" class="submit-btn">
+                <span class="btn-text">ACCESS</span>
+                <span class="btn-loader"><div class="spinner"></div></span>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div id="error-msg" class="error-msg"></div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>INSTANT BYPASS</h3>
+        <p>Googlebot user-agent spoofing cracks the paywall in milliseconds. No sign-up required.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>PRIVACY FIRST</h3>
+        <p>No tracking, no cookies, no analytics. Your reads stay yours. Zero data collected.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>CLEAN READER</h3>
+        <p>Distraction-free reading experience with code highlighting, images, and formatting preserved.</p>
+      </div>
+    </section>
+
+    <!-- Terminal Footer -->
+    <footer class="terminal-footer">
+      <div class="terminal-line">
+        <span class="prompt">elliotjr@mediumpremium</span><span class="cmd">:</span><span class="flag">~</span><span class="cmd">$ </span><span class="terminal-cmd-typing"></span>
+      </div>
+      <div class="terminal-line" style="margin-top: 4px;">
+        <span class="prompt">[SYS]</span> <span class="comment"># Built by Elliot Jr aka bratyabasu07 — Stay curious. Stay free.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

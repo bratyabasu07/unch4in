@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ article.title }} — MediumPremium</title>
+  <meta name="description" content="{{ article.title }} by {{ article.author }}">
+  <meta name="author" content="Elliot Jr aka bratyabasu07">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔓</text></svg>">
+</head>
+<body>
+  <!-- GIF Background -->
+  <div class="bg-gif"></div>
+  <div class="bg-gif-overlay"></div>
+
+  <!-- Effects -->
+  <canvas id="matrix-rain"></canvas>
+  <div class="scanlines"></div>
+  <div class="grid-bg"></div>
+  <div class="vignette"></div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">🔓</div>
+        <div class="logo-text">Medium<span>Premium</span></div>
+      </a>
+      <div class="nav-status">
+        <div class="status-dot"></div>
+        <span>PAYWALL BYPASSED ✓</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Creator Banner -->
+  <div class="creator-banner">
+    <span class="creator-label">⚡ CRAFTED BY</span>
+    <span class="creator-name" data-text="ELLIOT JR aka bratyabasu07">ELLIOT JR aka bratyabasu07</span>
+  </div>
+
+  <!-- Article -->
+  <div class="container">
+    <article class="article-page">
+      <a href="/" class="back-btn">← BACK</a>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <div class="meta-item">
+            <span class="meta-badge">🔓 UNLOCKED</span>
+          </div>
+          {% if article.reading_time %}
+          <div class="meta-item">
+            <span>⏱ {{ article.reading_time }} min read</span>
+          </div>
+          {% endif %}
+          {% if article.word_count %}
+          <div class="meta-item">
+            <span>📝 {{ article.word_count }} words</span>
+          </div>
+          {% endif %}
+          {% if article.fetch_method %}
+          <div class="meta-item">
+            <span class="meta-badge">⚡ {{ article.fetch_method | upper }}</span>
+          </div>
+          {% endif %}
+        </div>
+
+        <h1 class="article-title glitch-text">{{ article.title }}</h1>
+
+        <div class="article-author-row">
+          {% if article.author_img %}
+          <img class="author-avatar-img" src="{{ article.author_img }}" alt="{{ article.author }}">
+          {% else %}
+          <div class="author-avatar">👤</div>
+          {% endif %}
+          <div class="author-info">
+            <div class="author-name">
+              {% if article.author_username %}
+              <a href="https://medium.com/@{{ article.author_username }}" target="_blank" rel="noopener">{{ article.author }}</a>
+              {% else %}
+              {{ article.author }}
+              {% endif %}
+            </div>
+            <div class="author-date">
+              {% if article.publication %}<span class="publication-name">{{ article.publication }}</span> · {% endif %}
+              {% if article.pub_date %}{{ article.pub_date }}{% else %}Date unknown{% endif %}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {% if article.featured_img %}
+      <div class="article-featured">
+        <img src="{{ article.featured_img }}" alt="{{ article.title }}" loading="lazy">
+      </div>
+      {% endif %}
+
+      <div class="article-body">
+        {{ article.content | safe }}
+      </div>
+
+      {% if article.tags %}
+      <div class="article-tags">
+        {% for tag in article.tags %}
+        <span class="tag">#{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="article-stats">
+        {% if article.claps %}
+        <span>👏 {{ article.claps }} claps</span>
+        {% endif %}
+        {% if article.responses %}
+        <span>💬 {{ article.responses }} responses</span>
+        {% endif %}
+      </div>
+    </article>
+
+    <!-- Terminal Footer -->
+    <footer class="terminal-footer">
+      <div class="terminal-line">
+        <span class="prompt">elliotjr@mediumpremium</span><span class="cmd">:</span><span class="flag">~</span><span class="cmd">$ echo "Stay curious. Stay free."</span>
+      </div>
+      <div class="terminal-line" style="margin-top: 4px;">
+        <span class="prompt">[SYS]</span> <span class="comment"># Built by Elliot Jr aka bratyabasu07</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
